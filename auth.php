@@ -1,28 +1,27 @@
 <?php
 /**
- * Mantis auth backend
+ * DokuWiki / Mantis Authentication Plugin
  *
- * Uses external Trust mechanism to check against Mantis'
- * user cookie.
- * 13/12/2009 ~ @Tiago Gomes:
- * added modifications to make possible to set project related user rights.(http://www.mantisbt.org/bugs/view.php?id=8249)
- * added modifications so that mantis support logging in/out from DokuWiki's login page (http://www.mantisbt.org/bugs/view.php?id=8277)
+ * Allows single sign-on to DokuWiki, using external Trust mechanism to
+ * authenticate the user against MantisBT's user cookie.
  *
- * @author    Victor Boctor (http://www.futureware.biz)
- *
+ * @copyright (c) 2006 Victor Boctor
+ * @copyright (c) 2007-2012 Victor Boctor, Tiago Gomes and various contributors
+ * @copyright (c) 2013 Damien Regad
  */
 require_once( MANTIS_ROOT . 'core.php' );
 
 #dbg($GLOBALS);
 
-class auth_mantis extends auth_basic {
+class auth_plugin_authmantis extends DokuWiki_Auth_Plugin {
 
 	/**
 	 * Constructor.
 	 *
 	 * Sets additional capabilities and config strings
 	 */
-	function auth_mantis() {
+	function __construct() {
+		parent::__construct();
 		$this->cando['external'] = true;
 		$this->cando['logoff'] = true;
 	}
@@ -34,7 +33,7 @@ class auth_mantis extends auth_basic {
 	 * @param   bool    $sticky  Cookie should not expire
 	 * @return  bool             true on successful auth
 	 */
-	function trustExternal( $user, $pass, $sticky = false ) {
+	public function trustExternal( $user, $pass, $sticky = false ) {
 		global $USERINFO;
 		global $conf;
 
@@ -96,7 +95,7 @@ class auth_mantis extends auth_basic {
 	/**
 	 * Logout from Mantis
 	 */
-	function logOff() {
+	public function logOff() {
 		auth_logout();
 	}
 
@@ -106,7 +105,7 @@ class auth_mantis extends auth_basic {
 	 * @param string $user username
 	 * @return array|false if user does not exist
 	 */
-	function getUserData( $user ) {
+	public function getUserData( $user ) {
 		return $this->_loadUserData( user_get_id_by_name( $user ) );
 	}
 
@@ -115,7 +114,7 @@ class auth_mantis extends auth_basic {
 	 * @param int $p_user_id
 	 * @return array|false if user does not exist
 	 */
-	private function _loadUserData( $p_user_id ) {
+	protected function _loadUserData( $p_user_id ) {
 		if( !user_exists( $p_user_id ) ) {
 			return false;
 		}
