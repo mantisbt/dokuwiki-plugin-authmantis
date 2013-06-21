@@ -1,9 +1,0 @@
-DokuWiki / Mantis integration
-=============================
-
-This is the source code for the DokuWiki authentication back-end, allowing to
-use MantisBT to automatically login to DokuWiki (single sign-on).
-
-The integration was originally documented in the
-[MantisBT Wiki](https://mantisbt.org/wiki/doku.php/mantisbt:issue:7075:integration_with_dokuwiki)
-and related pages.
