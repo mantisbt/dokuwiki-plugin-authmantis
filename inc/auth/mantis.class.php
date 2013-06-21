@@ -76,7 +76,7 @@ class auth_mantis extends auth_basic {
 				$t_user_id = auth_get_current_user_id();
 
 				$USERINFO = $this->_loadUserData( $t_user_id );
-				$_SERVER[ 'REMOTE_USER' ] = $USERINFO['name'];
+				$_SERVER[ 'REMOTE_USER' ] = user_get_field( $t_user_id, 'username' );
 
 				$ValidUser = true;
 			}
@@ -136,7 +136,7 @@ class auth_mantis extends auth_basic {
 		$t_access_level_string_ex = strtoupper( $t_project_name[1] ) . '_' . $t_access_level_string;
 
 		return array(
-			'name' => user_get_field( $p_user_id, 'username' ),
+			'name' => user_get_name( $p_user_id ),
 			'pass' => user_get_field( $p_user_id, 'password' ),
 			'mail' => user_get_field( $p_user_id, 'email' ),
 			'grps' => array( $t_access_level_string, $t_access_level_string_ex ),
