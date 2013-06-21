@@ -7,6 +7,21 @@ Copyright (c) 2006 Victor Boctor
 Copyright (c) 2007-2012 Victor Boctor, Tiago Gomes and various contributors  
 Copyright (c) 2013 Damien Regad
 
+
+## License
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the 
+[GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html) 
+as published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+
 ## Compatibility
 
 This plugin has been tested with the following DokuWiki releases:
