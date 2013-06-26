@@ -1,7 +1,7 @@
 base   mantis
 author Damien Regad / MantisBT team
 email  mantis-dev@lists.sourceforge.com
-date   2013-06-21
+date   2013-06-26
 name   MantisBT Authentication Plugin
 desc   Allows to use MantisBT as authentication back-end to login to DokuWiki
 url    https://github.com/mantisbt/dokuwiki-plugin-authmantis
