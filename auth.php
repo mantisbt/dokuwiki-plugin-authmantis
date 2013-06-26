@@ -145,16 +145,29 @@ class auth_plugin_authmantis extends DokuWiki_Auth_Plugin {
 			$t_project_name = explode( ':', getNS( getID() ) );
 		}
 
-		$t_project_id = project_get_id_by_name( $t_project_name[1] );
-		$t_access_level = access_get_project_level( $t_project_id );
-		$t_access_level_string = strtoupper( MantisEnum::getLabel( config_get( 'access_levels_enum_string' ),  $t_access_level ) );
-		$t_access_level_string_ex = strtoupper( $t_project_name[1] ) . '_' . $t_access_level_string;
+		if( array_key_exists( 1, $t_project_name ) ) {
+			$t_project_id = project_get_id_by_name( $t_project_name[1] );
+			$t_project_name = strtoupper( $t_project_name[1] );
+		}
+		else {
+			$t_project_id = ALL_PROJECTS;
+		}
+		$t_access_level_string = strtoupper(
+			MantisEnum::getLabel(
+				config_get( 'access_levels_enum_string' ),
+				access_get_project_level( $t_project_id )
+			)
+		);
+		$t_access_levels = array( $t_access_level_string );
+		if( $t_project_id !== ALL_PROJECTS ) {
+			$t_access_levels[] = $t_project_name;
+		}
 
 		return array(
 			'name' => user_get_name( $p_user_id ),
 			'pass' => user_get_field( $p_user_id, 'password' ),
 			'mail' => user_get_field( $p_user_id, 'email' ),
-			'grps' => array( $t_access_level_string, $t_access_level_string_ex ),
+			'grps' => $t_access_levels,
 		);
 	}
 }
