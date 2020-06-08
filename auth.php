@@ -51,7 +51,6 @@ class auth_plugin_authmantis extends DokuWiki_Auth_Plugin {
 	 */
 	public function trustExternal( $user, $pass, $sticky = false ) {
 		global $USERINFO;
-		global $conf;
 
 		$ValidUser = false;
 
@@ -79,8 +78,6 @@ class auth_plugin_authmantis extends DokuWiki_Auth_Plugin {
 					global $lang;
 					msg( $lang['badlogin'], -1 );
 				}
-
-				$ValidUser = false;
 			}
 		}
 		else {
@@ -93,11 +90,7 @@ class auth_plugin_authmantis extends DokuWiki_Auth_Plugin {
 
 				$USERINFO = $this->_loadUserData( $t_user_id );
 				$_SERVER[ 'REMOTE_USER' ] = user_get_field( $t_user_id, 'username' );
-
 				$ValidUser = true;
-			}
-			else {
-				$ValidUser = false;
 			}
 		}
 
@@ -109,6 +102,7 @@ class auth_plugin_authmantis extends DokuWiki_Auth_Plugin {
 
 		return $ValidUser;
 	}
+	
 	/**
 	 * Logout from Mantis
 	 */
