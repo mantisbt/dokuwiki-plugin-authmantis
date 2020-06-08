@@ -1,4 +1,4 @@
-base   mantis
+base   authmantis
 author Damien Regad / MantisBT team
 email  mantis-dev@lists.sourceforge.com
 date   2013-06-26
