@@ -119,9 +119,10 @@ class auth_plugin_authmantis extends DokuWiki_Auth_Plugin {
 	 * Return user info
 	 *
 	 * @param string $user username
-	 * @return array|false if user does not exist
+	 * @param bool $requireGroups whether or not the returned data must include groups
+	 * @return false|array containing user data or false
 	 */
-	public function getUserData( $user ) {
+	public function getUserData($user, $requireGroups = true) {
 		return $this->_loadUserData( user_get_id_by_name( $user ) );
 	}
 
