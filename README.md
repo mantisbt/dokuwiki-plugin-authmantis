@@ -1,3 +1,5 @@
+# THIS DOES NOT WORK
+
 # DokuWiki / Mantis Authentication Plugin
 
 Enables single sign-on to DokuWiki, using external Trust mechanism to
