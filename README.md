@@ -38,19 +38,6 @@ from the DokuWiki website.
 Make sure it is installed in `lib/plugins/authmantis/` - if the folder is
 called differently, it will not work!
 
-### MantisBT core configuration
-
-Add the following lines to your `conf/local.protected.php` file, adjusting the
-values as necessary:
-
-```php
-# Path to the MantisBT root directory on the server
-define( 'MANTIS_ROOT', '/srv/www/mantisbt/' );
-# MantisBT URL
-define( 'MANTIS_URL', 'https://example.com/mantisbt/' );
-require_once( MANTIS_ROOT . 'core.php' );
-```
-
 ### ACL setup
 
 Setup the Access Control List groups as appropriate for your environment by 
@@ -68,14 +55,16 @@ For example, with default MantisBT access levels your setup could be:
 *  @ADMINISTRATOR  16
 ```
 
-### Change the Authentication Backend
+### Set the Authentication Backend
 
-Open the DokuWiki _Configuration Manager_, go to the _Authentication_ section, 
-then:
-
-1. **Check** _Use access control lists_
-2. Select **authmantis** as _Authentication Backend_
-3. Enter **@ADMINISTRATOR** as _Superuser_
+1. Open the DokuWiki _Configuration Manager_
+2. In the _Authentication_ section:
+   - **Check** _Use access control lists_
+   - Select **authmantis** as _Authentication Backend_
+   - Enter **@ADMINISTRATOR** as _Superuser_
+3. In the _Authmantis_ section:
+   - Set the path to your MantisBT installation (i.e. the location of the 
+     `core.php` file).  
 4. **Save** the changes.
 
 Alternatively, you can manually edit `local.php` or `local.protected.php`:
@@ -83,6 +72,7 @@ Alternatively, you can manually edit `local.php` or `local.protected.php`:
 $conf['useacl']      = 1;
 $conf['authtype']    = 'authmantis';
 $conf['superuser']   = '@ADMINISTRATOR';
+$conf['plugin']['authmantis']['mantis_root'] = '/path/to/mantisbt/';
 ``` 
 
 
