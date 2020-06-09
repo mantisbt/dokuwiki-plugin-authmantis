@@ -28,8 +28,6 @@
 // must be run within Dokuwiki
 if( !defined( 'DOKU_INC' ) ) die();
 
-#dbg($GLOBALS);
-
 class auth_plugin_authmantis extends DokuWiki_Auth_Plugin {
 
 	/**
