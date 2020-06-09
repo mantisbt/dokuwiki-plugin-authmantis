@@ -22,7 +22,5 @@
  * @author    Damien Regad
  */
 
-$lang['mantis_core_missing'] = "The <em>authmantis</em> plugin requires MantisBT Core to be loaded "
-	. "in the DokuWiki config file. <br>Please refer to the "
-	. '<a href="https://www.dokuwiki.org/plugin:authmantis">documentation</a> '
-	. "for detailed instructions.";
+$lang['bad_mantis_root'] = "Could not load MantisBT Core from '%1s'. "
+	. "Please check authmantis plugin settings or permissions.";

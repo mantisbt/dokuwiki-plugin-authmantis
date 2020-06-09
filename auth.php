@@ -43,11 +43,14 @@ class auth_plugin_authmantis extends DokuWiki_Auth_Plugin {
 	function __construct() {
 		parent::__construct();
 
-		// MantisBT Core MUST be loaded - abort if it is not
-		// We can't load it in the plugin, due to conflicts with the
-		// declaration of utf8 compatibility functions.
-		if( !defined( 'MANTIS_VERSION' ) ) {
-			die( $this->getLang( 'mantis_core_missing' ) );
+		# Load MantisBT core
+		$mantis_path = rtrim( $this->getConf( 'mantis_root' ), '/\\' );
+		$mantis_core = $mantis_path . DIRECTORY_SEPARATOR . 'core.php';
+		if( ! @include_once $mantis_core . 1 ) {
+			$message = sprintf( $this->getLang( 'bad_mantis_root' ), $mantis_path );
+			msg( $message, -1 );
+			$this->success = false;
+			return;
 		}
 
 		$this->cando['external'] = true;
