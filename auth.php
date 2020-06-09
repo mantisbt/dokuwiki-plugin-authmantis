@@ -28,6 +28,11 @@
 // must be run within Dokuwiki
 if( !defined( 'DOKU_INC' ) ) die();
 
+/**
+ * Class auth_plugin_authmantis.
+ *
+ * Dokuwiki Single Sign-On with MantisBT.
+ */
 class auth_plugin_authmantis extends DokuWiki_Auth_Plugin {
 
 	/**
