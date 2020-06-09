@@ -24,9 +24,18 @@ GNU General Public License for more details.
 
 ## Compatibility
 
-This plugin has been tested with the following DokuWiki releases:
+### DokuWiki
 
-- 2013-05-10 “Weatherwax”
+This plugin has been tested with all releases from 2013-05-10 “Weatherwax” 
+through 2018-04-22 “Greebo”, as well as “Hogfather” up to release candidate 3.
+
+### MantisBT
+
+MantisBT releases 1.2.x or later and 2.x are fully supported. 
+The plugin may work with earlier releases as well, but this is not tested.
+
+The [MantisBT wiki](https://mantisbt.org/wiki) relies on this plugin 
+since 2013. 
 
 
 ## Installation and Configuration
