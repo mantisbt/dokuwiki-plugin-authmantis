@@ -59,6 +59,7 @@ MantisBT instance.
 
 For example, with default MantisBT access levels your setup could be:
 ```
+# MantisBT access levels
 *  @VIEWER         1
 *  @REPORTER       2
 *  @UPDATER        4
