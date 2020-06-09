@@ -25,7 +25,8 @@
  * @author    Damien Regad
  */
 
-require_once( MANTIS_ROOT . 'core.php' );
+// must be run within Dokuwiki
+if( !defined( 'DOKU_INC' ) ) die();
 
 #dbg($GLOBALS);
 
