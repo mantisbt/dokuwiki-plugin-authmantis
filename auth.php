@@ -18,9 +18,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
- * @copyright (c) 2006 Victor Boctor
- * @copyright (c) 2007-2012 Victor Boctor, Tiago Gomes and various contributors
- * @copyright (c) 2013 Damien Regad
+ * @copyright (c) 2006       Victor Boctor
+ * @copyright (c) 2007-2012  Victor Boctor, Tiago Gomes and various contributors
+ * @copyright (c) 2013, 2020 Damien Regad
  * @license   GPLv3 or later (https://www.gnu.org/licenses/gpl-3.0.html)
  * @author    Damien Regad
  */

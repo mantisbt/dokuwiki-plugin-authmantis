@@ -3,9 +3,9 @@
 Enables single sign-on to DokuWiki, using external Trust mechanism to
 authenticate the user against MantisBT's user cookie.
 
-Copyright (c) 2006 Victor Boctor  
-Copyright (c) 2007-2012 Victor Boctor, Tiago Gomes and various contributors  
-Copyright (c) 2013 Damien Regad
+Copyright (c) 2006       Victor Boctor  
+Copyright (c) 2007-2012  Victor Boctor, Tiago Gomes and various contributors  
+Copyright (c) 2013, 2020 Damien Regad
 
 
 ## License
