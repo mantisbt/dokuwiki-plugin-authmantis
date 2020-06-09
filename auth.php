@@ -78,10 +78,8 @@ class auth_plugin_authmantis extends DokuWiki_Auth_Plugin {
 			}
 			else {
 				// Invalid credentials
-				if( !$silent ) {
-					global $lang;
-					msg( $lang['badlogin'], -1 );
-				}
+				global $lang;
+				msg( $lang['badlogin'], -1 );
 			}
 		}
 		else {
