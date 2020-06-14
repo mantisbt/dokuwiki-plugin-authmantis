@@ -1,7 +1,9 @@
-# DokuWiki / Mantis Authentication Plugin
+# DokuWiki / MantisBT Authentication Plugin
 
-Enables single sign-on to DokuWiki, using external Trust mechanism to
-authenticate the user against MantisBT's user cookie.
+This authentication plugin enables single sign-on to 
+[DokuWiki](https://www.dokuwiki.org/), 
+using an external trust mechanism to authenticate users against
+[MantisBT](https://mantisbt.org/).
 
 Copyright (c) 2006       Victor Boctor  
 Copyright (c) 2007-2012  Victor Boctor, Tiago Gomes and various contributors  
