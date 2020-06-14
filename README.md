@@ -40,49 +40,8 @@ since 2013.
 
 ## Installation and Configuration
 
-Install the plugin following standard
-[instructions](https://www.dokuwiki.org/plugin_installation_instructions)
-from the DokuWiki website.
-
-Make sure it is installed in `lib/plugins/authmantis/` - if the folder is
-called differently, it will not work!
-
-### ACL setup
-
-Setup the Access Control List groups as appropriate for your environment by 
-defining entries in `acl.auth.php` for each access level defined in your 
-MantisBT instance. 
-
-For example, with default MantisBT access levels your setup could be:
-```
-# MantisBT access levels
-*  @VIEWER         1
-*  @REPORTER       2
-*  @UPDATER        4
-*  @DEVELOPER      8
-*  @MANAGER        16
-*  @ADMINISTRATOR  16
-```
-
-### Set the Authentication Backend
-
-1. Open the DokuWiki _Configuration Manager_
-2. In the _Authentication_ section:
-   - **Check** _Use access control lists_
-   - Select **authmantis** as _Authentication Backend_
-   - Enter **@ADMINISTRATOR** as _Superuser_
-3. In the _Authmantis_ section:
-   - Set the path to your MantisBT installation (i.e. the location of the 
-     `core.php` file).  
-4. **Save** the changes.
-
-Alternatively, you can manually edit `local.php` or `local.protected.php`:
-```
-$conf['useacl']      = 1;
-$conf['authtype']    = 'authmantis';
-$conf['superuser']   = '@ADMINISTRATOR';
-$conf['plugin']['authmantis']['mantis_root'] = '/path/to/mantisbt/';
-``` 
+Detailed instructions can be found on the 
+[Plugin's homepage](https://www.dokuwiki.org/plugin:authmantis#setup).
 
 
 ## Support
