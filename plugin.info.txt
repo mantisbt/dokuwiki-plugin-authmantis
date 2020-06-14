@@ -1,7 +1,7 @@
 base   authmantis
 author Damien Regad / MantisBT team
 email  mantis-dev@lists.sourceforge.com
-date   2013-06-26
+date   2020-06-14
 name   MantisBT Authentication Plugin
 desc   Enables single sign-on to DokuWiki using MantisBT as authentication back-end
 url    https://www.dokuwiki.org/plugin:authmantis
